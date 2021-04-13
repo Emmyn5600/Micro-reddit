@@ -1,17 +1,49 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
+<div class="Nav-bar">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a href="#"><img src="./micro.jpg" width="18" height="18" style="border:1px white solid;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+      <a class="navbar-brand" href="#">Microverse</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">New |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Past |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Comments |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Show |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Submit |</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ask</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-success" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-<button type="button" class="btn btn-success">Primary</button>
+</div>
+
 <table>
   <thead class="heading-color">
-    <tr class="heading-color-1 ">
-    <td style="width:18px; padding-right:4px"><a href="#">
-    <img src="./micro.jpg" width="18" height="18" style="border:1px white solid;"></a></td>
-    <td style="line-height:12pt; height:10px;"><span class="pagetop"><b class="hnname"><a href="#">Microverse</a></b>
-    <a href="#">new</a> | <a href="front">past</a> | <a href="#">comments</a> | <a href="#">ask</a> | <a href="#">show</a> | <span class="topsel"><a href="#">jobs</a></span> | <a href="#">submit</a> </span></td>
-    <td style="text-align:right;margin-right:100px;"><span class="pagetop"><a href="#">login</a></span></td> 
-    </tr>
     <th>Title</th>
       <th>Content</th>
       <th colspan="3"></th>
