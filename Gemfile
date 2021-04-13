@@ -10,7 +10,7 @@ gem 'font-awesome-rails'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite'
+  gem 'sqlite3'
 end
 
 group :production do
