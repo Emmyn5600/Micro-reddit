@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-
- <div class="input-group pt-3">
+  <div class="design">
+ <div class="input-group pt-3 mx-auto">
   <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
     <option selected>Choose Author</option>
     <option value="1">Emmy</option>
@@ -20,6 +20,7 @@
   </select>
   <button class="btn btn-outline-secondary" type="button">Search</button>
   </div>
+  <div class="field-actions">
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -32,5 +33,10 @@
 
   <div class="actions">
     <%= form.submit %>
+  </div> 
+  <div class="d-flex justify-content-center">
+  <%= link_to 'Back', posts_path, :class => "btn btn-info" %>
+  <div>
+  </div>
   </div>
 <% end %>
