@@ -10,25 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_145722) do
+ActiveRecord::Schema.define(version: 2021_04_14_190911) do
 
-  create_table "autors", force: :cascade do |t|
+  create_table "authors", force: :cascade do |t|
     t.string "name"
-    t.text "email"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "post_id", null: false
-    t.index ["post_id"], name: "index_autors_on_post_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
-    t.integer "post_id", null: false
-    t.integer "autor_id", null: false
+    t.string "content"
+    t.integer "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["autor_id"], name: "index_comments_on_autor_id"
-    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["author_id"], name: "index_comments_on_author_id"
+  end
+
+  create_table "post2s", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.integer "author_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_post2s_on_author_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -36,15 +41,8 @@ ActiveRecord::Schema.define(version: 2021_04_14_145722) do
     t.text "Content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "autor_id", null: false
-    t.integer "comment_id", null: false
-    t.index ["autor_id"], name: "index_posts_on_autor_id"
-    t.index ["comment_id"], name: "index_posts_on_comment_id"
   end
 
-  add_foreign_key "autors", "posts"
-  add_foreign_key "comments", "autors"
-  add_foreign_key "comments", "posts"
-  add_foreign_key "posts", "autors"
-  add_foreign_key "posts", "comments"
+  add_foreign_key "comments", "authors"
+  add_foreign_key "post2s", "authors"
 end

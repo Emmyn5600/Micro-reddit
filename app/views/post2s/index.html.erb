@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+<div class="Nav-bar">
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  <a href="#"><img src="./micro.jpg" width="18" height="18" style="border:1px white solid;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <a class="navbar-brand" href="#">Microverse</a>
+        <li class="nav-item">
+          <%= link_to 'New Post |', new_post2_path, :class =>"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Past |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Comments |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Show |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Submit |</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ask</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <%= link_to 'Authors', new_author_path, :class => "btn btn-warning"%>
+        <button class="btn btn-outline-success" type="submit" >Login</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
+<% @post2s.each_with_index do |post, index| %>
+<div class="row">
+<div class="col-lg-8 display-form d-flex justify-content-around pt-2">
+ <%= index + 1 %>.<p class="title-paragraph"><strong>Title: </span></strong> <%= post.title %></p><br>
+  <p class="content-paragraph"><strong><span>Content: </span></strong><%= post.content %>(<%= @authors[index].email %>)</p><br>
+  <%= link_to 'Show', post, :class => "btn btn-success" %><br>
+  <%= link_to 'Edit', edit_post2_path(post), :class => "btn btn-warning" %><br>
+  <%= link_to 'Destroy', post, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<div class="col-lg-8 display-form-2 d-flex justify-content-around pt-2">
+  <p class="display-form-paragraph"><span>by <%= @authors[index].name %> <%= post.created_at %> | 116 comments</span></p>
+ </div>
+</div>
+ <% end %>
+

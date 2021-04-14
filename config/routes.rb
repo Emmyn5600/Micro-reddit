@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'posts#index'
+  resources :post2s
+  resources :commentaries
+  resources :authors
+  root 'post2s#index'
 
   resources :posts
   resources :autor
