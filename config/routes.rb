@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'posts#index'
+  root 'autor#new'
 
   resources :posts
   resources :autor

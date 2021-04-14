@@ -1,5 +1,41 @@
 <h1>New Post</h1>
-
+<div class="Nav-bar">
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  <a href="#"><img src="../micro.jpg" width="38" height="28" style="border:1px white solid;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'New Post |', new_post_path, :class =>"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Past |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Comments |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Show |</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Submit |</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ask</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <%= link_to 'Authors', new_autor_path, :class => "btn btn-warning"%>
+        <button class="btn btn-outline-success" type="submit" >Login</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
 <%= render 'form', post: @post %>
 
 <%= link_to 'Back', posts_path %>
