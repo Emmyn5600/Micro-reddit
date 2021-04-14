@@ -13,7 +13,8 @@ class Post2sController < ApplicationController
 
   # GET /post2s/1 or /post2s/1.json
   def show
-
+    @post2 = Post2.find(params[:id])
+    @author = Author.find(@post2.author_id)
   end
 
   # GET /post2s/new
@@ -70,6 +71,6 @@ class Post2sController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post2_params
-      params.require(:post2).permit(:title, :content, :author_id, :commentary_id)
+      params.require(:post2).permit(:title, :content, :author_id)
     end
 end

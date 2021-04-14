@@ -3,7 +3,7 @@
 <div class="row">
 <div class="col-lg-8 display-form d-flex justify-content-around pt-2">
  <%= index + 1 %>.<p class="title-paragraph"><strong>Title: </span></strong> <%= post.title %></p><br>
-  <p class="content-paragraph"><strong><span>Content: </span></strong><%= post.Content %>(emm64418@gmail.com)</p><br>
+  <p class="content-paragraph"><strong><span>Content: </span></strong><%= post.content %>(emm64418@gmail.com)</p><br>
   <%= link_to 'Show', post, :class => "btn btn-success" %><br>
   <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning" %><br>
   <%= link_to 'Destroy', post, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -20,7 +20,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @post.Content %>
+  <%= @post.content %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

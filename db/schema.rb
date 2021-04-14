@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2021_04_14_190911) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "commentaries", force: :cascade do |t|
+    t.string "content"
+    t.integer "author_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_commentaries_on_author_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.integer "author_id", null: false
@@ -43,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_14_190911) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "commentaries", "authors"
   add_foreign_key "comments", "authors"
   add_foreign_key "post2s", "authors"
 end
