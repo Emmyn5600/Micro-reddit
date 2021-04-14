@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+
+  def index
+    @comments = Comment.all
+  end
+
   def show
     @comments = Comment.all
   end
@@ -28,5 +33,5 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
   end
-  
+
 end
