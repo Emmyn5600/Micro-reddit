@@ -64,16 +64,14 @@ div.actions {
 label {
   display: block; }
 
-.heading-color {
-  .heading-color-1 {
-  background-color: #ff6600;
+.navbar-nav {
+  .nav-item {
+    a:hover {
+      background-color:#198754;
+    }
   }
-  a {
-    text-decoration: none;
-    color :black;
-  }
+}
 
-  a:hover {
-    text-decoration: none;
-  }
-  }
+.navbar-brand:hover {
+  background-color:#198754;
+}
