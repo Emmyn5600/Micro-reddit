@@ -10,13 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_223448) do
+ActiveRecord::Schema.define(version: 2021_04_14_145722) do
+
+  create_table "autors", force: :cascade do |t|
+    t.string "name"
+    t.text "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "post_id", null: false
+    t.index ["post_id"], name: "index_autors_on_post_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.integer "post_id", null: false
+    t.integer "autor_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["autor_id"], name: "index_comments_on_autor_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "Content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "autor_id", null: false
+    t.integer "comment_id", null: false
+    t.index ["autor_id"], name: "index_posts_on_autor_id"
+    t.index ["comment_id"], name: "index_posts_on_comment_id"
   end
 
+  add_foreign_key "autors", "posts"
+  add_foreign_key "comments", "autors"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "posts", "autors"
+  add_foreign_key "posts", "comments"
 end
