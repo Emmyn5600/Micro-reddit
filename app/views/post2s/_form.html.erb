@@ -10,15 +10,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="design">
+  <div class="design mx-auto">
     <div class="input-group pt-3 mx-auto">
       <%= form.label :author_id %>
-      <%= form.collection_select :author_id, Author.order(:name), :id, :name %>
+      <%= form.collection_select :author_id, Author.order(:name), :id, :name, :class => 'select' %>
     </div>
   <div class="field-actions">
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, :class => 'title-field' %>
   </div>
 
   <div class="field">
@@ -26,8 +26,8 @@
     <%= form.text_area :content %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div> 
+   <div class="actions button d-flex justify-content-around">
+    <%= form.submit 'Create Post', :class => 'btn btn-primary'%>
+  </div>
 <% end %>
 
