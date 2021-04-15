@@ -18,3 +18,11 @@
   <strong>Author:</strong>
   <%= @author.email %>
 </p>
+
+
+<h2>Comments</h2>
+
+<%= render @post2.commentaries %>
+
+<h2>Add a comment:</h2>
+<%= render 'commentaries/form' %>

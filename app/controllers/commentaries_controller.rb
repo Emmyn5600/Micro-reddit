@@ -12,7 +12,6 @@ class CommentariesController < ApplicationController
 
   # GET /commentaries/new
   def new
-    @commentary = Commentary.new
   end
 
   # GET /commentaries/1/edit
@@ -21,17 +20,13 @@ class CommentariesController < ApplicationController
 
   # POST /commentaries or /commentaries.json
   def create
-    @commentary = Commentary.new(commentary_params)
 
-    respond_to do |format|
-      if @commentary.save
-        format.html { redirect_to @commentary, notice: "Commentary was successfully created." }
-        format.json { render :show, status: :created, location: @commentary }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @commentary.errors, status: :unprocessable_entity }
-      end
-    end
+    @post2 = Post2.find(params[:post2_id])
+    @commentary = @post2.commentaries.create(commentary_params)
+
+    redirect_to post2s_path(@post2)
+ 
+
   end
 
   # PATCH/PUT /commentaries/1 or /commentaries/1.json
