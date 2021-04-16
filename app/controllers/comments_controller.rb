@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update
+    return unless @comment.update
 
     end
   end
