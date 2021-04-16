@@ -19,7 +19,6 @@ class CommentsController < ApplicationController
 
   def update
     return unless @comment.update
-
   end
 
   def destroy
