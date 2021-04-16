@@ -21,12 +21,10 @@ ActiveRecord::Schema.define(version: 2021_04_15_001805) do
 
   create_table "commentaries", force: :cascade do |t|
     t.string "content"
-    t.integer "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "post2s_id", null: false
-    t.index ["author_id"], name: "index_commentaries_on_author_id"
-    t.index ["post2s_id"], name: "index_commentaries_on_post2s_id"
+    t.integer "post2_id", null: false
+    t.index ["post2_id"], name: "index_commentaries_on_post2_id"
   end
 
   create_table "post2s", force: :cascade do |t|
@@ -38,15 +36,6 @@ ActiveRecord::Schema.define(version: 2021_04_15_001805) do
     t.index ["author_id"], name: "index_post2s_on_author_id"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "Content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "commentaries", "authors"
-  add_foreign_key "commentaries", "post2s", column: "post2s_id"
-  add_foreign_key "comments", "authors"
+  add_foreign_key "commentaries", "post2s"
   add_foreign_key "post2s", "authors"
 end

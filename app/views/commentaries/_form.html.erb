@@ -1,9 +1,5 @@
 <%= form_with model: [ @post2, @post2.commentaries.build ] do |form| %>
   <p>
-      <%= form.label :author_id %>
-      <%= form.collection_select :author_id, Author.order(:name), :id, :name %>
-   </p>
-  <p>
     <%= form.label :content %><br>
     <%= form.text_area :content %>
   </p>
