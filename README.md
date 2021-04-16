@@ -34,7 +34,7 @@ Text Editor (VSCode is suggested.) Ruby Rails Bundler Yarn SQL
 
 To get a local copy up and running follow these simple example steps.
 
-- On the project GitHub page, navigate to the main page of the repository [this page](https://github.com/kiranitor123/blog_app.git).
+- On the project GitHub page, navigate to the main page of the repository [this page](https://github.com/Emmyn5600/Micro-reddit.git).
 - Under the repository name, locate and click on a green button named `Code`.
 - Copy the project URL as displayed.
 - If you're running Windows Operating System, open your command prompt. On Linux, Open your terminal.
@@ -72,7 +72,7 @@ Please Note that you must have Git installed on your PC, this can be done [here]
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/kiranitor123/blog_app/issues).
+Feel free to check the [issues page](https://github.com/Emmyn5600/Micro-reddit/issues).
 
 ## Show your support
 
