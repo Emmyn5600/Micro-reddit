@@ -1,5 +1,6 @@
-class AutorController < ApplicationController
+# frozen_string_literal: true
 
+class AutorController < ApplicationController
   def index
     @autors = Autor.all
   end
@@ -12,8 +13,7 @@ class AutorController < ApplicationController
     @autor = Autor.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @autor = Autor.new
@@ -23,21 +23,17 @@ class AutorController < ApplicationController
     else
       render :new
     end
-
   end
 
   def update
-
-      if @autor.updatd
-        redirect_to articles_url, notice: 'Article was updated successfully.'
-      else
-        render :edit
-      end
-    
+    if @autor.updatd
+      redirect_to articles_url, notice: 'Article was updated successfully.'
+    else
+      render :edit
+    end
   end
 
   def destroy
     @autor.destroy
   end
-
 end

@@ -1,5 +1,6 @@
-class CommentsController < ApplicationController
+# frozen_string_literal: true
 
+class CommentsController < ApplicationController
   def index
     @comments = Comment.all
   end
@@ -12,26 +13,19 @@ class CommentsController < ApplicationController
     @comments = Comment.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @comment = Comment.new
-
   end
 
   def update
+    if @comment.update
 
-      if @comment.update
-
-      else
-
-      end
-
+    end
   end
 
   def destroy
     @comment.destroy
   end
-
 end
