@@ -4,8 +4,7 @@ class CommentariesController < ApplicationController
 
     @post2 = Post2.find(params[:post2_id])
 
-    @commentary = @post2.commentaries.create(commentary_params)
-    redirect_to post2s_path(@post2)
+    redirect_to post2_path(@post2)
  
   end
 
