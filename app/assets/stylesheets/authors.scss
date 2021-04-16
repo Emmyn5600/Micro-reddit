@@ -1,19 +1,21 @@
 // Place all the styles related to the Authors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.email-field, select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+
+.email-field,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .design-2 {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 30px;
-    height: 300px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 30px;
+  height: 300px;
 }

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AutorController < ApplicationController
   def index
     @autors = Autor.all

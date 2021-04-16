@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Post2sController < ApplicationController
   before_action :set_post2, only: %i[show edit update destroy]
 

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CommentariesController < ApplicationController
   before_action :set_commentary, only: %i[show edit update destroy]
 
