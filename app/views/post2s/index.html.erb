@@ -1,0 +1,16 @@
+<% @post2s.each_with_index do |post, index| %>
+<div class="row">
+  <div class="col-lg-8 display-form d-flex justify-content-around pt-2">
+  <%= index + 1 %>.<p class="title-paragraph"><strong>Title: </span></strong> <%= post.title %></p><br>
+    <p class="content-paragraph"><strong><span>Content: </span></strong><%= post.content %>(<%= @authors[index].email %>)</p><br>
+    <%= link_to 'Show', post, :class => "btn btn-success" %><br>
+    <%= link_to 'Edit', edit_post2_path(post), :class => "btn btn-warning" %><br>
+    <%= link_to 'Destroy', post, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <div class="col-lg-8 display-form-2 d-flex justify-content-around pt-2">
+    <p class="display-form-paragraph"><span>by <%= @authors[index].name %> <%= post.created_at %> | 116 comments</span></p>
+  </div>
+</div>
+<% end %>
+
+<p id="notice"><%= notice %></p>
