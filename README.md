@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Blog_App
+# Micro_Reddit
 > This is a Micro-reddit App used to create an Author, New post, and Comment using Ruby on Rails/Active Record.
 
 ![](./app/assets/images/img1.png)
